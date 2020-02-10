@@ -37,9 +37,6 @@ function Player:draw()
         playerBarPosition = {x = gameWidth / 4, y = gameHeight / 6}
     end
 
-    font = love.graphics.newFont(12)
-    love.graphics.setFont(font)
-
     -- can barı
     UI:drawRectangle({1, 1, 1}, 1, "line", playerBarPosition.x,
                      playerBarPosition.y, barDimension.x, barDimension.y)
@@ -47,7 +44,7 @@ function Player:draw()
                  playerBarPosition.y - 20)
 
     local healthBarLenght = (barDimension.x / self.maxHealth) * self.health;
-    healthBarLenght = healthBarLenght == 250 and 248 or healthBarLenght
+    healthBarLenght = healthBarLenght >= 250 and 248 or healthBarLenght
     UI:drawRectangle({1, 0, 0}, nil, "fill", playerBarPosition.x + 1,
                      playerBarPosition.y + 1, healthBarLenght,
                      barDimension.y - 2)
@@ -59,7 +56,7 @@ function Player:draw()
                  playerBarPosition.y - 20)
 
     local manaBarLenght = (barDimension.x / self.maxMana) * self.mana;
-    manaBarLenght = manaBarLenght == 250 and 248 or manaBarLenght
+    manaBarLenght = manaBarLenght >= 250 and 248 or manaBarLenght
     UI:drawRectangle({0, 0, 1}, 1, "fill", playerBarPosition.x * 2 + 1,
                      playerBarPosition.y + 1, manaBarLenght, barDimension.y - 2)
 
