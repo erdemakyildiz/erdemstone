@@ -31,7 +31,7 @@ function Game:draw()
                      self.turnButtonDimension.y - self.turnButtonSize.y,
                      self.turnButtonSize.x, self.turnButtonSize.y)
 
-    UI:printText({0, 0, 0}, 25, self.turnText, self.turnButtonDimension.x + 25,
+    UI:printText(self.turnColor, 25, self.turnText, self.turnButtonDimension.x + 25,
                  self.turnButtonDimension.y - self.turnButtonSize.y + 10)
 end
 
