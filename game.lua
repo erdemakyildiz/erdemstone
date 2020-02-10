@@ -129,11 +129,11 @@ function Game:attack(card)
     if enemy.health <= 0 then
         -- can sıfıra ulaşırsa sonucu göstermek için
         if enemy == self.pc then
-            UI.mainMessageColor = {0, 1, 0}
-            UI.mainMessage = "Kazandın"
+            mainMessageColor = {0, 1, 0}
+            mainMessage = "Kazandın"
         else
-            UI.mainMessage = {1, 0, 0}
-            UI.mainMessage = "Kaybettin"
+            mainMessage = {1, 0, 0}
+            mainMessage = "Kaybettin"
         end
 
         game.active = false
