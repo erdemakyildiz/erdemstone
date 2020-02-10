@@ -15,7 +15,7 @@ end
 
 function Ui:drawRectangle(color, lineWidth, type, x, y, x1, y1)
     setColor(color)
-    -- love.graphics.setLineWidth(lineWidth == nil and 0 or lineWidth)
+    love.graphics.setLineWidth(lineWidth == nil and 0 or lineWidth)
     love.graphics.rectangle("fill", x, y, x1, y1)
 end
 
